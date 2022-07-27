@@ -3,6 +3,8 @@ package fr.varowz.itemeffect;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import fr.varowz.itemeffect.commands.CommandItemEffect;
+
 public class Main extends JavaPlugin{
 	
 	private String prefix;
@@ -13,6 +15,8 @@ public class Main extends JavaPlugin{
 		saveDefaultConfig();
 		
 		setPrefix(getConfig().getString("Lang.Prefix").replace("&", "§"));
+		
+		getCommand("itemeffect").setExecutor(new CommandItemEffect(this));
 		
 		Bukkit.getConsoleSender().sendMessage(getPrefix() + "§aPlugin §7[§e1.0.0§7] §ais online.");
 		Bukkit.getConsoleSender().sendMessage(getPrefix() + "§aPlugin §7[§e1.0.0§7] §cDev by VaroWz.");

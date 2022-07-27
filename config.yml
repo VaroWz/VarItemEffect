@@ -1,11 +1,12 @@
 Lang:
   Prefix: "&f[&3ItemEffect&f] "
   NoPerm: 
+  ReceiveItemEffect:
 
 
 
 ItemEffect:
-  1:
+  "strenghtcookie":
     Material: COOKIE
     Data: 0
     Name: "&6&lSUPER COOKIE &f(Strength 01:20)"
@@ -18,7 +19,7 @@ ItemEffect:
       #You can change on HEAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: RIGHT_CLICK
       Duration: 120
-  2:
+  "speedapple":
     Material: GOLDEN_APPLE
     Data: 0
     Name: "&b&lSPEED APPLE &f(Speed 01:20)"
