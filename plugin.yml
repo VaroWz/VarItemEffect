@@ -1,0 +1,9 @@
+api: spigot
+name: VarItemEffect
+author: VaroWz
+version: 1.0.0
+main: fr.varowz.itemeffect.Main
+commands:
+  itemeffect:
+    description: See all commands of this plugin
+    aliases: [ie]

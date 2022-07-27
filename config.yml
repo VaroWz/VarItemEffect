@@ -1,0 +1,33 @@
+Lang:
+  Prefix:
+  NoPerm: 
+
+
+
+ItemEffect:
+  1:
+    Material: COOKIE
+    Data: 0
+    Name: "&6&lSUPER COOKIE &f(Strength 01:20)"
+    Lore: 
+    - "&r"
+    - "&f-> Heat this cookie to get strength effect !"
+    - "&r"
+    Effect:
+      Type: STRENGTH
+      #You can change on HEAT, RIGHT_CLICK, LEFT_CLICK   
+      EffectOn: RIGHT_CLICK
+      Duration: 120
+  2:
+    Material: GOLDEN_APPLE
+    Data: 0
+    Name: "&b&lSPEED APPLE &f(Speed 01:20)"
+    Lore: 
+    - "&r"
+    - "&f-> Heat this apple to get speed effect !"
+    - "&r"
+    Effect:
+      Type: SPEED
+      #You can change on HEAT, RIGHT_CLICK, LEFT_CLICK   
+      EffectOn: HEAT
+      Duration: 120
