@@ -12,11 +12,12 @@ ItemEffect:
     Name: "&6&lSUPER COOKIE &f(Strength 01:20)"
     Lore: 
     - "&r"
-    - "&f-> Heat this cookie to get strength effect !"
+    - "&f-> right clock this cookie to get strength effect !"
     - "&r"
     Effect:
       Type: STRENGTH
-      #You can change on HEAT, RIGHT_CLICK, LEFT_CLICK   
+      Power: 1
+      #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: RIGHT_CLICK
       Duration: 120
   "speedapple":
@@ -25,10 +26,10 @@ ItemEffect:
     Name: "&b&lSPEED APPLE &f(Speed 01:20)"
     Lore: 
     - "&r"
-    - "&f-> Heat this apple to get speed effect !"
+    - "&f-> eat this apple to get speed effect !"
     - "&r"
     Effect:
       Type: SPEED
-      #You can change on HEAT, RIGHT_CLICK, LEFT_CLICK   
-      EffectOn: HEAT
+      #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
+      EffectOn: EAT
       Duration: 120
