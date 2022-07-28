@@ -1,7 +1,7 @@
 Lang:
   Prefix: "&f[&3ItemEffect&f] "
-  NoPerm: 
-  ReceiveItemEffect:
+  NoPerm: "&cnoperm"
+  ReceiveItemEffect: "&areceive"
 
 
 
@@ -18,7 +18,7 @@ ItemEffect:
       Type: STRENGTH
       Power: 1
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
-      EffectOn: RIGHT_CLICK
+      EffectOn: "RIGHT_CLICK"
       Duration: 120
   "speedapple":
     Material: GOLDEN_APPLE
@@ -31,5 +31,5 @@ ItemEffect:
     Effect:
       Type: SPEED
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
-      EffectOn: EAT
+      EffectOn: "EAT"
       Duration: 120
