@@ -11,7 +11,6 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import fr.varowz.itemeffect.ActionEffect;
 import fr.varowz.itemeffect.Main;
 
 public class onInteract implements Listener {
