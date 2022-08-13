@@ -15,7 +15,7 @@ ItemEffect:
     - "&f-> right clock this cookie to get strength effect !"
     - "&r"
     Effect:
-      Type: STRENGTH
+      Type: INCREASE_DAMAGE
       Power: 1
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: "RIGHT_CLICK"
@@ -30,6 +30,7 @@ ItemEffect:
     - "&r"
     Effect:
       Type: SPEED
+      Power: 2
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: "EAT"
       Duration: 120

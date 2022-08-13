@@ -66,13 +66,24 @@ public class CommandItemEffect implements CommandExecutor {
 						if(sender.hasPermission("itemeffect.give")) {
 							if(Bukkit.getPlayer(arg2) != null) {
 							
-								Player player = Bukkit.getPlayer(arg2);
-								GiveItemEffect(player, String.valueOf(arg3), 1);
-								player.sendMessage(main.getConfig().getString("Lang.ReceiveItemEffect")
-										.replace("&", "§")
-										.replace("{ammount}", "1")
-										.replace("{itemname}", arg3));
-								sender.sendMessage("§fVous avez donné 1 §a" + arg3 + " §fà §a" + arg2);
+								for(String string: main.getConfig().getConfigurationSection("ItemEffect").getKeys(false)) {
+									
+									if(String.valueOf(arg3).equals(string)) {
+										Player player = Bukkit.getPlayer(arg2);
+										GiveItemEffect(player, String.valueOf(arg3), 1);
+										player.sendMessage(main.getConfig().getString("Lang.ReceiveItemEffect")
+												.replace("&", "§")
+												.replace("{ammount}", "1")
+												.replace("{itemname}", arg3));
+										sender.sendMessage("§fVous avez donné 1 §a" + arg3 + " §fà §a" + arg2);
+									}
+									else {
+										sender.sendMessage("bug");
+									}
+									
+								}
+								
+								
 							}
 						}
 						else {
@@ -91,13 +102,24 @@ public class CommandItemEffect implements CommandExecutor {
 						if(sender.hasPermission("itemeffect.give")) {
 							if(Bukkit.getPlayer(arg2) != null) {
 							
-								Player player = Bukkit.getPlayer(arg2);
-								GiveItemEffect(player, String.valueOf(arg3), Integer.valueOf(arg4));
-								player.sendMessage(main.getConfig().getString("Lang.ReceiveItemEffect")
-										.replace("&", "§")
-										.replace("{ammount}", arg4)
-										.replace("{itemname}", arg3));
-								sender.sendMessage("§fVous avez donné §a" + arg4 + "  §a" + arg3 + " §fà §a" + arg2);
+								for(String string: main.getConfig().getConfigurationSection("ItemEffect").getKeys(false)) {
+									
+									if(String.valueOf(arg3).equals(string)) {
+										Player player = Bukkit.getPlayer(arg2);
+										GiveItemEffect(player, String.valueOf(arg3), Integer.valueOf(arg4));
+										player.sendMessage(main.getConfig().getString("Lang.ReceiveItemEffect")
+												.replace("&", "§")
+												.replace("{ammount}", arg4)
+												.replace("{itemname}", arg3));
+										sender.sendMessage("§fVous avez donné §a" + arg4 + "  §a" + arg3 + " §fà §a" + arg2);
+									}
+									else {
+										sender.sendMessage("bug");
+									}
+								}
+								
+								
+
 							}
 						}
 						else {

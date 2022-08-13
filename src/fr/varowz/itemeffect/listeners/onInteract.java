@@ -30,35 +30,28 @@ public class onInteract implements Listener {
 		
 		if(item==null) {return;}
 		
+		
+		
 		if(action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
 			
 			for(String string: main.getConfig().getConfigurationSection("ItemEffect").getKeys(false)) {
 				
 				if(main.getConfig().getConfigurationSection("ItemEffect")
-						.getString(string + ".Effect.EffectOn") == "RIGHT_CLICK") {
-				
-					Bukkit.broadcastMessage("ok");
+						.getString(string + ".Effect.EffectOn").equalsIgnoreCase("RIGHT_CLICK")) {
 					
-					if(item.getType() == Material.valueOf(main.getConfig().getConfigurationSection("ItemEffect")
-							.getString(string + ".Material"))
+					if(item.getType() == Material.valueOf(main.getConfig().getString("ItemEffect."+string + ".Material"))
 							&& item.hasItemMeta()
 							&& item.getItemMeta().hasDisplayName()
-							&& item.getItemMeta().getDisplayName() == main.getConfig().getConfigurationSection("ItemEffect")
-							.getString(string+".Name")) {
+							&& item.getItemMeta().getDisplayName() == main.getConfig().getString("ItemEffect."+string+".Name"));
 						
 						player.removePotionEffect(PotionEffectType.getByName(main.getConfig().getConfigurationSection("ItemEffect")
 								.getString(string+".Effect.Type")));
 						
-						player.addPotionEffect(new PotionEffect(PotionEffectType.getByName(main.getConfig().getConfigurationSection("ItemEffect")
-								.getString(string+".Effect.Type")),
-								20*main.getConfig().getConfigurationSection("ItemEffect").getInt(string+".Effect.Duration"),
-								main.getConfig().getConfigurationSection("ItemEffect").getInt(string+".Effect.Power")-1));
-					}
+						player.addPotionEffect(new PotionEffect(PotionEffectType.getByName(main.getConfig().getString("ItemEffect."+string+".Effect.Type")),
+								20*main.getConfig().getInt("ItemEffect."+string+".Effect.Duration"),
+								main.getConfig().getInt("ItemEffect."+string+".Effect.Power")-1));
 				}
 			}
 		}
 	}
-	
-	
-
 }
