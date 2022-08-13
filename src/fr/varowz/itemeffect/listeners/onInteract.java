@@ -54,8 +54,14 @@ public class onInteract implements Listener {
 							item.setAmount(item.getAmount() -1);
 						}
 						else {
-							player.setItemInHand(null);
-							player.updateInventory();
+							if(action == Action.RIGHT_CLICK_AIR) {
+								player.setItemInHand(null);
+								player.updateInventory();
+							}
+							else {
+								player.setItemInHand(null);
+								player.updateInventory();
+							}
 						}	
 					}
 				}
