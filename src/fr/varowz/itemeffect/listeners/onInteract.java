@@ -1,6 +1,5 @@
 package fr.varowz.itemeffect.listeners;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -42,7 +41,7 @@ public class onInteract implements Listener {
 					if(item.getType() == Material.valueOf(main.getConfig().getString("ItemEffect."+string + ".Material"))
 							&& item.hasItemMeta()
 							&& item.getItemMeta().hasDisplayName()
-							&& item.getItemMeta().getDisplayName() == main.getConfig().getString("ItemEffect."+string+".Name"));
+							&& item.getItemMeta().getDisplayName().equalsIgnoreCase(main.getConfig().getString("ItemEffect."+string+".Name").replace("&", "§"))) {
 						
 						player.removePotionEffect(PotionEffectType.getByName(main.getConfig().getConfigurationSection("ItemEffect")
 								.getString(string+".Effect.Type")));
@@ -50,6 +49,15 @@ public class onInteract implements Listener {
 						player.addPotionEffect(new PotionEffect(PotionEffectType.getByName(main.getConfig().getString("ItemEffect."+string+".Effect.Type")),
 								20*main.getConfig().getInt("ItemEffect."+string+".Effect.Duration"),
 								main.getConfig().getInt("ItemEffect."+string+".Effect.Power")-1));
+						
+						if(item.getAmount() > 1){
+							item.setAmount(item.getAmount() -1);
+						}
+						else {
+							player.setItemInHand(null);
+							player.updateInventory();
+						}	
+					}
 				}
 			}
 		}
