@@ -48,6 +48,9 @@ public class CommandItemEffect implements CommandExecutor {
 					else if(arg.equalsIgnoreCase("give")) {
 						HelpCommand(sender);
 					}
+					else if(arg.equalsIgnoreCase("list")) {
+						ListCommand(sender);
+					}
 					else {
 						HelpCommand(sender);
 					}
@@ -150,6 +153,17 @@ public class CommandItemEffect implements CommandExecutor {
 		for(int i =0; i<ammount; i++) {
 			player.getInventory().addItem(item);
 		}
+	}
+	
+	public void ListCommand(CommandSender sender) {
+		sender.sendMessage("§9§m-------LIST-------");
+		
+		for(String string: main.getConfig().getConfigurationSection("ItemEffect").getKeys(false)) {
+			
+			sender.sendMessage("§f"+string+": "+ main.getConfig().getString("ItemEffect."+string+".Name").replace("&", "§"));
+			
+		}
+		sender.sendMessage("§9§m------------------");
 	}
 	
 	public void HelpCommand(CommandSender sender) {
