@@ -77,16 +77,18 @@ public class CommandItemEffect implements CommandExecutor {
 									if(String.valueOf(arg3).equals(string)) {
 										Player player = Bukkit.getPlayer(arg2);
 										GiveItemEffect(player, String.valueOf(arg3), 1);
-										player.sendMessage(main.getConfig().getString("Lang.ReceiveItemEffect")
+										player.sendMessage(main.getPrefix()+main.getConfig().getString("Lang.ReceiveItemEffect")
 												.replace("&", "§")
-												.replace("{ammount}", "1")
-												.replace("{itemname}", arg3));
-										sender.sendMessage("§fVous avez donné 1 §a" + arg3 + " §fà §a" + arg2);
-									}
-									else {
-										sender.sendMessage("bug");
+												.replace("%number%", "1")
+												.replace("%itemname%", main.getConfig().getString("ItemEffect."+arg3+".Name").replace("&", "§")));
+										sender.sendMessage(main.getPrefix()+main.getConfig().getString("Lang.GiveItemEffect")
+												.replace("&", "§")
+												.replace("%number%", "1")
+												.replace("%itemname%", main.getConfig().getString("ItemEffect."+arg3+".Name").replace("&", "§")));
+										return true;
 									}
 								}
+								sender.sendMessage(main.getPrefix()+main.getConfig().getString("Lang.ErrorName").replace("&", "§"));
 							}
 						}
 						else {
@@ -110,16 +112,18 @@ public class CommandItemEffect implements CommandExecutor {
 									if(String.valueOf(arg3).equals(string)) {
 										Player player = Bukkit.getPlayer(arg2);
 										GiveItemEffect(player, String.valueOf(arg3), Integer.valueOf(arg4));
-										player.sendMessage(main.getConfig().getString("Lang.ReceiveItemEffect")
+										player.sendMessage(main.getPrefix()+main.getConfig().getString("Lang.ReceiveItemEffect")
 												.replace("&", "§")
-												.replace("{ammount}", arg4)
-												.replace("{itemname}", arg3));
-										sender.sendMessage("§fVous avez donné §a" + arg4 + "  §a" + arg3 + " §fà §a" + arg2);
-									}
-									else {
-										sender.sendMessage("bug");
+												.replace("%number%", arg4)
+												.replace("%itemname%", main.getConfig().getString("ItemEffect."+arg3+".Name").replace("&", "§")));
+										sender.sendMessage(main.getPrefix()+main.getConfig().getString("Lang.GiveItemEffect")
+												.replace("&", "§")
+												.replace("%number%", arg4)
+												.replace("%itemname%", main.getConfig().getString("ItemEffect."+arg3+".Name").replace("&", "§")));
+										return true;
 									}
 								}
+								sender.sendMessage(main.getPrefix()+ main.getConfig().getString("Lang.ErrorName").replace("&", "§"));
 							}
 						}
 						else {

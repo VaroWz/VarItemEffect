@@ -33,7 +33,7 @@ public class Main extends JavaPlugin{
 	@Override
 	public void onDisable() {
 		
-		Bukkit.getConsoleSender().sendMessage(getPrefix() + "§cPlugin §7[§e1.0.4§7] §cis offline.");
+		Bukkit.getConsoleSender().sendMessage(getPrefix() + "§cPlugin §7[§e1.0.0§7] §cis offline.");
 		
 	}
 

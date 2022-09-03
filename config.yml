@@ -1,7 +1,9 @@
 Lang:
   Prefix: "&f[&3ItemEffect&f] "
-  NoPerm: "&cnoperm"
-  ReceiveItemEffect: "&areceive"
+  NoPerm: "&cYou don't have permission to do this."
+  ReceiveItemEffect: "&7You have received &a%number% %itemname% &7!"
+  GiveItemEffect: "&7You have give &a%number% %itemname% &7!"
+  ErrorName: "&cUse correct name of itemeffect."
 
 ItemEffect:
   "cookie":
@@ -41,11 +43,11 @@ ItemEffect:
     Name: "&d&lSUPER CARROT &f(Regen 03:00)"
     Lore: 
     - "&r"
-    - "&f-> right click this carrot to get regen effect !"
+    - "&f-> right click this carrot to get regeneration effect !"
     - "&r"
     Effect:
       Type: REGENERATION
       Power: 1
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
-      EffectOn: "RIGHT_CLICK"
+      EffectOn: "LEFT_CLICK"
       Duration: 180
