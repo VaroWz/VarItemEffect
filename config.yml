@@ -3,12 +3,11 @@ Lang:
   NoPerm: "&cnoperm"
   ReceiveItemEffect: "&areceive"
 
-
-
 ItemEffect:
   "cookie":
     Material: COOKIE
     Data: 0
+    Glow: true
     Name: "&6&lSUPER COOKIE &f(Strength 01:20)"
     Lore: 
     - "&r"
@@ -23,6 +22,7 @@ ItemEffect:
   "apple":
     Material: GOLDEN_APPLE
     Data: 0
+    Glow: true
     Name: "&b&lSPEED APPLE &f(Speed 01:20)"
     Lore: 
     - "&r"
@@ -37,6 +37,7 @@ ItemEffect:
   "carrot":
     Material: CARROT_ITEM
     Data: 0
+    Glow: true
     Name: "&d&lSUPER CARROT &f(Regen 03:00)"
     Lore: 
     - "&r"

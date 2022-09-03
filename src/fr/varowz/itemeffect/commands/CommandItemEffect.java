@@ -1,5 +1,6 @@
 package fr.varowz.itemeffect.commands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -7,7 +8,9 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -138,7 +141,19 @@ public class CommandItemEffect implements CommandExecutor {
 		ItemMeta meta = item.getItemMeta();
 		meta.setDisplayName(main.getConfig().getString("ItemEffect."+itemname+".Name").replace("&", "§"));
 		List<String> lore = main.getConfig().getStringList("ItemEffect."+itemname+".Lore");
-		meta.setLore(lore);
+		List<String> loree = new ArrayList<String>();
+		for(int i = 0; i < lore.size(); i++) {
+			String line = lore.get(i).replace("&", "§");
+			
+			loree.add(line);
+		}
+		meta.setLore(loree);
+		
+		if(main.getConfig().getBoolean("ItemEffect."+itemname+".Glow") == true) {
+			meta.addEnchant(Enchantment.ARROW_INFINITE, 0, false);
+			meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+		}
+		
 		item.setItemMeta(meta);
 		
 		for(int i =0; i<ammount; i++) {
