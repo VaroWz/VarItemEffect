@@ -60,5 +60,35 @@ public class onInteract implements Listener {
 				}
 			}
 		}
+		if(action == Action.LEFT_CLICK_AIR || action == Action.LEFT_CLICK_BLOCK) {
+			
+			for(String string: main.getConfig().getConfigurationSection("ItemEffect").getKeys(false)) {
+				
+				if(main.getConfig().getConfigurationSection("ItemEffect")
+						.getString(string + ".Effect.EffectOn").equalsIgnoreCase("LEFT_CLICK")) {
+					
+					if(item.getType() == Material.valueOf(main.getConfig().getString("ItemEffect."+string + ".Material"))
+							&& item.hasItemMeta()
+							&& item.getItemMeta().hasDisplayName()
+							&& item.getItemMeta().getDisplayName().equalsIgnoreCase(main.getConfig().getString("ItemEffect."+string+".Name").replace("&", "§"))) {
+						
+						player.removePotionEffect(PotionEffectType.getByName(main.getConfig().getConfigurationSection("ItemEffect")
+								.getString(string+".Effect.Type")));
+						
+						player.addPotionEffect(new PotionEffect(PotionEffectType.getByName(main.getConfig().getString("ItemEffect."+string+".Effect.Type")),
+								20*main.getConfig().getInt("ItemEffect."+string+".Effect.Duration"),
+								main.getConfig().getInt("ItemEffect."+string+".Effect.Power")-1));
+						
+						if(item.getAmount() > 1){
+							item.setAmount(item.getAmount() -1);
+						}
+						else {
+							item.setType(Material.LEATHER);
+							player.setItemInHand(new ItemStack(Material.AIR));
+						}
+					}
+				}
+			}
+		}
 	}
 }

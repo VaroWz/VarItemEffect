@@ -6,13 +6,13 @@ Lang:
 
 
 ItemEffect:
-  "strenghtcookie":
+  "cookie":
     Material: COOKIE
     Data: 0
     Name: "&6&lSUPER COOKIE &f(Strength 01:20)"
     Lore: 
     - "&r"
-    - "&f-> right clock this cookie to get strength effect !"
+    - "&f-> right click this cookie to get strength effect !"
     - "&r"
     Effect:
       Type: INCREASE_DAMAGE
@@ -20,7 +20,7 @@ ItemEffect:
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: "RIGHT_CLICK"
       Duration: 80
-  "speedapple":
+  "apple":
     Material: GOLDEN_APPLE
     Data: 0
     Name: "&b&lSPEED APPLE &f(Speed 01:20)"
@@ -34,3 +34,17 @@ ItemEffect:
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: "EAT"
       Duration: 80
+  "carrot":
+    Material: CARROT_ITEM
+    Data: 0
+    Name: "&d&lSUPER CARROT &f(Regen 03:00)"
+    Lore: 
+    - "&r"
+    - "&f-> right click this carrot to get regen effect !"
+    - "&r"
+    Effect:
+      Type: REGENERATION
+      Power: 1
+      #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
+      EffectOn: "RIGHT_CLICK"
+      Duration: 180
