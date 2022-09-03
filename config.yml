@@ -19,7 +19,7 @@ ItemEffect:
       Power: 1
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: "RIGHT_CLICK"
-      Duration: 120
+      Duration: 80
   "speedapple":
     Material: GOLDEN_APPLE
     Data: 0
@@ -33,4 +33,4 @@ ItemEffect:
       Power: 2
       #You can change on EAT, RIGHT_CLICK, LEFT_CLICK   
       EffectOn: "EAT"
-      Duration: 120
+      Duration: 80

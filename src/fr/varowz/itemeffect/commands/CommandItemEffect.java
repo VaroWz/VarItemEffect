@@ -83,10 +83,7 @@ public class CommandItemEffect implements CommandExecutor {
 									else {
 										sender.sendMessage("bug");
 									}
-									
 								}
-								
-								
 							}
 						}
 						else {
@@ -120,9 +117,6 @@ public class CommandItemEffect implements CommandExecutor {
 										sender.sendMessage("bug");
 									}
 								}
-								
-								
-
 							}
 						}
 						else {
@@ -135,9 +129,6 @@ public class CommandItemEffect implements CommandExecutor {
 				sender.sendMessage(main.getConfig().getString("Lang.NoPerm").replace("&", "§"));
 			}
 		}
-		
-		
-		
 		return false;
 	}
 	
@@ -170,6 +161,7 @@ public class CommandItemEffect implements CommandExecutor {
 		sender.sendMessage("§9§m--------------------------------");
 		sender.sendMessage("§3/itemeffect §bsee all commands.");
 		sender.sendMessage("§3/itemeffect give <player> <itemname> [number] §bGive item to a player.");
+		sender.sendMessage("§3/itemeffect list §bSee all itemeffects.");
 		sender.sendMessage("§3/itemeffect reload §bReload config.");
 		sender.sendMessage("§9§m--------------------------------");
 	}

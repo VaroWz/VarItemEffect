@@ -29,8 +29,6 @@ public class onInteract implements Listener {
 		
 		if(item==null) {return;}
 		
-		
-		
 		if(action == Action.RIGHT_CLICK_AIR || action == Action.RIGHT_CLICK_BLOCK) {
 			
 			for(String string: main.getConfig().getConfigurationSection("ItemEffect").getKeys(false)) {
@@ -54,15 +52,10 @@ public class onInteract implements Listener {
 							item.setAmount(item.getAmount() -1);
 						}
 						else {
-							if(action == Action.RIGHT_CLICK_AIR) {
-								player.setItemInHand(null);
-								player.updateInventory();
-							}
-							else {
-								player.setItemInHand(null);
-								player.updateInventory();
-							}
-						}	
+							item.setType(Material.LEATHER);
+							player.setItemInHand(new ItemStack(Material.AIR));
+						}
+							
 					}
 				}
 			}
